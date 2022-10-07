@@ -20,7 +20,6 @@ public class DatabaseLoader implements ApplicationRunner {
     private final String[] gadgets = {
             "Earbuds", "Speakers", "Tripod", "Instant Pot", "Coffee Cup", "Keyboard", "Sunglasses"};
     private final PostRepository postRepository;
-
     private final AuthorRepository authorRepository;
     public List<Post> randomPosts = new ArrayList<>();
     public List<Author> authors = new ArrayList<>();
