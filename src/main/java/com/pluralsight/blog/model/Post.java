@@ -3,6 +3,8 @@ package com.pluralsight.blog.model;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,8 +15,12 @@ import java.util.Date;
 @Entity
 public class Post {
     @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Version private Long version;
+    @NotNull
+    @Size(min = 4, max = 100)
     private String title;
     @Column(length=1000000)
     @Lob
